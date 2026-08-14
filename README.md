@@ -36,7 +36,7 @@ HAVING SUM(Salaire) > 200000;
 ---
  ### 2. Analyse de Performance & Rémunération (WHERE )
 
-> *Sélection des profils hautement rémunérés (> 100k) mais sous-évalués (Note != 5)
+> *Sélection des profils hautement rémunérés (> 100k) mais sous-évalués (Note != 5)*
 ```sql
 SELECT Prenom, Nom, Poste, Salaire, EvaluationPerformance 
 FROM Employes 
