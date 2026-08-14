@@ -26,33 +26,6 @@ L'objectif est d'extraire des **insights clés pour la prise de décision RH** :
 
 ##  Exemples de Requêtes & Analyses Réalisées
 
-### 1. Statistiques des Salaires & Groupements (`GROUP BY` & `HAVING`)
-> *Identification des départements dont la masse salariale dépasse 200 000 $*
-```sql
-SELECT Departement, SUM(Salaire) AS MasseSalariale
-FROM Employes 
-GROUP BY Departement 
-HAVING SUM(Salaire) > 200000;
-```
-
-### 2. Analyse de Performance & Rémunération (`WHERE`)
-> *Sélection des profils hautement rémunérés (> 100k) mais sous-évalués (Note != 5)*
-
-```sql
-SELECT Prenom, Nom, Poste, Salaire, EvaluationPerformance 
-FROM Employes 
-WHERE EvaluationPerformance != 5 AND Salaire > 100000;
-```
-
-### 3. Analyse Temporelle d'Ancienneté
-> *Filtrage des employés recrutés au cours des 5 dernières années*
-```sql
-SELECT Prenom, Nom, DateEmbauche 
-FROM Employes 
-WHERE DateEmbauche >= DATE_SUB(CURDATE(), INTERVAL 5 YEAR);
-
-
-```
 -- ============================================================
 # I- CREATION ET INSERTION
 -- ============================================================
