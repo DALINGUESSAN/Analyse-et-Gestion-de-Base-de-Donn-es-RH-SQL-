@@ -54,7 +54,7 @@ WHERE DateEmbauche >= DATE_SUB(CURDATE(), INTERVAL 5 YEAR);
 
 ```
 -- ============================================================
-# -- CREATION ET INSERTION
+# I- CREATION ET INSERTION
 -- ============================================================
 ```sql
 CREATE TABLE Employes (
@@ -106,138 +106,175 @@ INSERT INTO Employes VALUES
 ```
 
 -- ============================================================
-# -- PARTIE 1 : SELECTIONS ET FILTRES DE BASE
+# II- PARTIE 1 : SELECTIONS ET FILTRES DE BASE
 -- ============================================================
 
--- 1. Sélection de tous les employés
+### 1. Sélection de tous les employés
+```sql
 SELECT * FROM Employes;
+```
 
--- 2. Sélectionner tous les employés dont le pays est la RDC
+### 2. Sélectionner tous les employés dont le pays est la RDC
+```sql
 SELECT * FROM Employes WHERE Pays = 'RDC';
-
--- 3. Afficher uniquement les colonnes Prenom, Nom et Pays
+```
+### 3. Afficher uniquement les colonnes Prenom, Nom et Pays
+```sql
 SELECT Prenom, Nom, Pays FROM Employes;
-
--- 4. Employés ayant un salaire supérieur à 90 000
+```
+### 4. Employés ayant un salaire supérieur à 90 000
+```sql
 SELECT * FROM Employes WHERE Salaire > 90000;
+```
 
--- 5. Employés embauchés après le 1er janvier 2020
+### 5. Employés embauchés après le 1er janvier 2020
+```sql
 SELECT * FROM Employes WHERE DateEmbauche > '2020-01-01';
+```
+### 6. Employés dont le prénom commence par la lettre 'A'
 
--- 6. Employés dont le prénom commence par la lettre 'A'
+```sql
 SELECT * FROM Employes WHERE Prenom LIKE 'A%';
-
--- 7. Employés travaillant dans le département Informatique ou Finance
+```
+### 7. Employés travaillant dans le département Informatique ou Finance
+```sql
 SELECT * FROM Employes WHERE Departement = 'Informatique' OR Departement = 'Finance';
-
+```
 
 -- ============================================================
--- PARTIE 2 : COMPARAISON, PLAGE ET RECHERCHE PARTIELLE
+# III- PARTIE 2 : COMPARAISON, PLAGE ET RECHERCHE PARTIELLE
 -- ============================================================
 
--- 1. Salaire entre 50 000 et 100 000
+### 1. Salaire entre 50 000 et 100 000
+```sql
 SELECT * FROM Employes WHERE Salaire BETWEEN 50000 AND 100000;
-
--- 2. Poste contenant le mot 'Manager'
+```
+### 2. Poste contenant le mot 'Manager'
+```sql
 SELECT * FROM Employes WHERE Poste LIKE '%Manager%';
-
--- 3. Évaluation de performance différente de 5
+```
+### 3. Évaluation de performance différente de 5
+```sql
 SELECT * FROM Employes WHERE EvaluationPerformance != 5;
+```
 
--- 4. Embauchés en 2021
+### 4. Embauchés en 2021
+```sql
 SELECT * FROM Employes WHERE YEAR(DateEmbauche) = 2021;
+```
 
--- 5. Employés venant de France, Belgique ou États-Unis
+### 5. Employés venant de France, Belgique ou États-Unis
+```sql
 SELECT * FROM Employes WHERE Pays IN ('France', 'Belgique', 'États-Unis');
-
+```
 
 -- ============================================================
--- PARTIE 3 : TRI ET LIMITES
+# IV- PARTIE 3 : TRI ET LIMITES
 -- ============================================================
 
--- 1. Les 5 salaires les plus élevés
+### 1. Les 5 salaires les plus élevés
+```sql
 SELECT * FROM Employes ORDER BY Salaire DESC LIMIT 5;
-
--- 2. Ordre croissant des dates d'embauche
+```
+### 2. Ordre croissant des dates d'embauche
+```sql
 SELECT * FROM Employes ORDER BY DateEmbauche ASC;
-
--- 3. Les 3 premiers employés triés par performance décroissante
+```
+### 3. Les 3 premiers employés triés par performance décroissante
+```sql
 SELECT * FROM Employes ORDER BY EvaluationPerformance DESC LIMIT 3;
-
+```
 
 -- ============================================================
--- PARTIE 4 : FONCTIONS D'AGREGATION
+# V- PARTIE 4 : FONCTIONS D'AGREGATION
 -- ============================================================
 
--- 1. Salaire total
+### 1. Salaire total
+```sql
 SELECT SUM(Salaire) AS SalaireTotal FROM Employes;
 
--- 2. Salaire moyen du département Informatique
+### 2. Salaire moyen du département Informatique
+```sql
 SELECT AVG(Salaire) AS SalaireMoyen FROM Employes WHERE Departement = 'Informatique';
-
--- 3. Nombre total d'employés
+```
+### 3. Nombre total d'employés
+```sql
 SELECT COUNT(*) AS NombreEmployes FROM Employes;
-
--- 4. Salaire minimum et maximum
+```
+### 4. Salaire minimum et maximum
+```sql
 SELECT MIN(Salaire) AS SalaireMin, MAX(Salaire) AS SalaireMax FROM Employes;
-
--- 5. Nombre d'employés par département
+```
+### 5. Nombre d'employés par département
+```sql
 SELECT Departement, COUNT(*) AS NombreEmployes FROM Employes GROUP BY Departement;
-
+```
 
 -- ============================================================
--- PARTIE 5 : GROUP BY ET HAVING
+# VI- PARTIE 5 : GROUP BY ET HAVING
 -- ============================================================
 
--- 1. Salaire moyen par pays
+### 1. Salaire moyen par pays
+```sql
 SELECT Pays, AVG(Salaire) AS SalaireMoyen FROM Employes GROUP BY Pays;
-
--- 2. Départements ayant plus de 3 employés
+```
+### 2. Départements ayant plus de 3 employés
+```sql
 SELECT Departement, COUNT(*) AS NombreEmployes 
 FROM Employes 
 GROUP BY Departement 
 HAVING COUNT(*) > 3;
-
--- 3. Pays où le salaire moyen est supérieur à 70 000
+```
+### 3. Pays où le salaire moyen est supérieur à 70 000
+```sql
 SELECT Pays, AVG(Salaire) AS SalaireMoyen 
 FROM Employes 
 GROUP BY Pays 
 HAVING AVG(Salaire) > 70000;
-
+```
 
 -- ============================================================
--- PARTIE 6 : INSERT ET UPDATE
+# VII- PARTIE 6 : INSERT ET UPDATE
 -- ============================================================
 
--- Insertion d'un nouvel employé
+> * Insertion d'un nouvel employé*
+```sql
 INSERT INTO Employes 
 (ID, Prenom, Nom, Email, Telephone, Poste, Departement, Salaire, DateEmbauche, EvaluationPerformance, Pays) 
 VALUES 
 (31, 'Michel', 'Tamba', 'michel.tamba@exemple.com', '+243-818-456-789', 'Analyste', 'Finance', 60000.00, '2025-01-20', 4, 'Congo');
-
--- Mise à jour du salaire de l'ID 5
+```
+> *  Mise à jour du salaire de l'ID 5 *
+```sql
 UPDATE Employes SET Salaire = 80000.00 WHERE ID = 5;
-
--- Modification du département des développeurs (hommes et femmes)
+```
+> * Modification du département des développeurs (hommes et femmes)*
+```sql
 UPDATE Employes SET Departement = 'Développement' WHERE Poste LIKE 'Développe%';
-
+```
 
 -- ============================================================
--- PARTIE 7 : CAS PRATIQUES
+# VIII- PARTIE 7 : CAS PRATIQUES
 -- ============================================================
 
--- 1. Embauchés dans les 5 dernières années (relatif à la date système)
+### 1. Embauchés dans les 5 dernières années (relatif à la date système)
+```sql
 SELECT * FROM Employes WHERE DateEmbauche >= DATE_SUB(CURDATE(), INTERVAL 5 YEAR);
-
--- 2. Non évalués à 5 ET gagnant plus de 100 000
+```
+### 2. Non évalués à 5 ET gagnant plus de 100 000
+```sql
 SELECT * FROM Employes WHERE EvaluationPerformance != 5 AND Salaire > 100000;
+```
 
--- 3. Départements dont la masse salariale dépasse 200 000
+ ### 3. Départements dont la masse salariale dépasse 200 000
+ ```sql
 SELECT Departement, SUM(Salaire) AS MasseSalariale
 FROM Employes 
 GROUP BY Departement 
 HAVING SUM(Salaire) > 200000;
+```
 
--- 4. Adresse email contenant 'gmail'
+### 4. Adresse email contenant 'gmail'
+```sql
 SELECT * FROM Employes WHERE Email LIKE '%gmail%';
 ```
