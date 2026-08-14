@@ -32,3 +32,10 @@ SELECT Departement, SUM(Salaire) AS MasseSalariale
 FROM Employes 
 GROUP BY Departement 
 HAVING SUM(Salaire) > 200000;
+
+### 2. Analyse de Performance & Rémunération (WHERE)
+> *Sélection des profils hautement rémunérés (> 100k) mais sous-évalués (Note != 5)
+```sql
+SELECT Prenom, Nom, Poste, Salaire, EvaluationPerformance 
+FROM Employes 
+WHERE EvaluationPerformance != 5 AND Salaire > 100000;
