@@ -7,7 +7,7 @@
 
 ##  Aperçu du Projet
 
-Ce projet propose une solution complète de gestion et d'analyse de données de ressources humaines (RH) à l'aide de SQL. Il simule une base de données d'entreprise internationale regroupant 30+ collaborateurs répartis dans plusieurs pays et départements.
+Ce projet propose une solution complète de **gestion et d'analyse de données de ressources humaines (RH)** à l'aide de SQL. Il simule une base de données d'entreprise internationale regroupant 30+ collaborateurs répartis dans plusieurs pays et départements.
 
 L'objectif est d'extraire des **insights clés pour la prise de décision RH** : masse salariale, répartition géographique, suivi des performances, filtres stratégiques et mises à jour de données.
 
