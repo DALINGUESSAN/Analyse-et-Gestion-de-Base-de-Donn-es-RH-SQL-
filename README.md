@@ -110,11 +110,13 @@ INSERT INTO Employes VALUES
 -- ============================================================
 
 ### 1. Sélection de tous les employés
+
 ```sql
 SELECT * FROM Employes;
 ```
 
 ### 2. Sélectionner tous les employés dont le pays est la RDC
+
 ```sql
 SELECT * FROM Employes WHERE Pays = 'RDC';
 ```
