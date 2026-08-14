@@ -52,11 +52,11 @@ FROM Employes
 WHERE DateEmbauche >= DATE_SUB(CURDATE(), INTERVAL 5 YEAR);
 
 
-
+```
 -- ============================================================
--- CREATION ET INSERTION
+# -- CREATION ET INSERTION
 -- ============================================================
-
+```sql
 CREATE TABLE Employes (
     ID INT PRIMARY KEY,
     Prenom VARCHAR(50),
@@ -70,7 +70,8 @@ CREATE TABLE Employes (
     EvaluationPerformance INT,
     Pays VARCHAR(50)
 );
-
+```
+```sql
 INSERT INTO Employes VALUES 
 (1, 'Fabrice', 'Mutombo', 'fabrice.mutombo@gmail.com', '+243-811-123-456', 'Consultant', 'Finance', 118364.22, '2018-09-24', 2, 'RDC'),
 (2, 'Fatou', 'Diop', 'fatou.diop@yahoo.com', '+221-78-456-7890', 'Développeur', 'Marketing', 31816.73, '2022-12-08', 3, 'Sénégal'),
@@ -102,10 +103,10 @@ INSERT INTO Employes VALUES
 (28, 'Aimé', 'Ndayizeye', 'aime.ndayizeye@exemple.bi', '+257-78-34-12-56', 'Designer Graphique', 'Marketing', 40000.50, '2018-07-08', 5, 'Burundi'),
 (29, 'Kossi', 'Mensah', 'kossi.mensah@exemple.tg', '+228-90-54-32-10', 'Spécialiste Logistique', 'Opérations', 52000.75, '2019-06-15', 4, 'Togo'),
 (30, 'Aminatou', 'Idrissa', 'aminatou.idrissa@exemple.ne', '+227-94-54-32-10', 'Responsable Qualité', 'Opérations', 62000.90, '2020-09-25', 3, 'Niger');
-
+```
 
 -- ============================================================
--- PARTIE 1 : SELECTIONS ET FILTRES DE BASE
+# -- PARTIE 1 : SELECTIONS ET FILTRES DE BASE
 -- ============================================================
 
 -- 1. Sélection de tous les employés
