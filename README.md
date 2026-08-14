@@ -3,7 +3,6 @@
 ![SQL](https://img.shields.io/badge/Language-SQL-blue?style=for-the-badge&logo=sqlite&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
 ![VS Code](https://img.shields.io/badge/IDE-VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-![MySQL](https://img.shields.io/badge/Database-MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 ![Data Analysis](https://img.shields.io/badge/Focus-Data_Analysis-orange?style=for-the-badge)
 
 ##  Aperçu du Projet
