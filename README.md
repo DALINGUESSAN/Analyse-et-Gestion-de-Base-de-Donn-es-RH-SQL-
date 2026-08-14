@@ -1,4 +1,4 @@
-# 🗄️ Analyse et Gestion de Base de Données RH (SQL)
+#  Analyse et Gestion de Base de Données RH (SQL)
 
 ![SQL](https://img.shields.io/badge/Language-SQL-blue?style=for-the-badge&logo=sqlite&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
@@ -6,7 +6,7 @@
 ![MySQL](https://img.shields.io/badge/Database-MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 ![Data Analysis](https://img.shields.io/badge/Focus-Data_Analysis-orange?style=for-the-badge)
 
-## 🎯 Aperçu du Projet
+##  Aperçu du Projet
 
 Ce projet propose une solution complète de **gestion et d'analyse de données de ressources humaines (RH)** à l'aide de SQL. Il simule une base de données d'entreprise internationale regroupant 30+ collaborateurs répartis dans plusieurs pays et départements.
 
@@ -14,7 +14,7 @@ L'objectif est d'extraire des **insights clés pour la prise de décision RH** :
 
 ---
 
-## 🛠️ Compétences & Concepts SQL Couverts
+##  Compétences & Concepts SQL Couverts
 
 * **DDL & DML :** Création de tables (`CREATE TABLE`), insertion (`INSERT INTO`) et mise à jour de données (`UPDATE`).
 * **Sélection & Filtrage :** Requêtes multi-critères (`WHERE`, `AND`, `OR`, `IN`, `BETWEEN`, `LIKE`).
@@ -25,7 +25,7 @@ L'objectif est d'extraire des **insights clés pour la prise de décision RH** :
 
 ---
 
-## 🔍 Exemples de Requêtes & Analyses Réalisées
+##  Exemples de Requêtes & Analyses Réalisées
 
 ### 1. Statistiques des Salaires & Groupements (`GROUP BY` & `HAVING`)
 > *Identification des départements dont la masse salariale dépasse 200 000 $*
